@@ -1,4 +1,5 @@
 package com.example.domain.model
 
-class StatsDomainModel {
-}
+data class StatsDomainModel (
+    val marketPrice: Double
+)

@@ -48,6 +48,17 @@ object Versions {
     // Coroutines
     const val coroutines = "1.3.9"
 
+    // Gson
+    const val gson = "2.9.0"
+
+    // Lifecycle
+    const val lifecycle = "2.3.0-alpha07"
+
+    //Networking
+    const val retrofit = "2.9.0"
+    const val okhttp = "4.8.1"
+    const val loggingInterceptor = "4.8.1"
+
 }
 
 object BuildPlugins {
@@ -96,6 +107,20 @@ object Libraries {
     const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
     const val coroutinesAndroid =
         "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+
+    // Networking - Retrofit, OKHTTP and loggingInterceptor
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    const val ohttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
+    const val loggingInterceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
+
+    // Lifecycle
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
+    const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
+    const val viewModelSavedState =
+        "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Versions.lifecycle}"
 }
 
 object TestLibraries {
