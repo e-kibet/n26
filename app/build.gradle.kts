@@ -1,9 +1,11 @@
 plugins {
     id(BuildPlugins.androidApplication)
     id(BuildPlugins.kotlinAndroid)
-    id(BuildPlugins.kotlinAndroidExtensions)
+    id(BuildPlugins.kotlinParcelizePlugin)
     id(BuildPlugins.ktlintPlugin)
+    id(BuildPlugins.kapt)
     id(BuildPlugins.jacocoAndroid)
+    id(BuildPlugins.safeargs)
 }
 
 jacoco {
@@ -13,7 +15,7 @@ jacoco {
 android {
 
     compileSdkVersion(AndroidSdk.compileSdkVersion)
-    buildToolsVersion("30.0.3")
+    buildToolsVersion(AndroidSdk.buildToolsVersion)
 
     android.buildFeatures.dataBinding = true
     android.buildFeatures.viewBinding = true
@@ -53,16 +55,40 @@ android {
 
     dependencies {
         implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
-        implementation(Libraries.kotlinStandardLibrary)
-        implementation(Libraries.appCompat)
-        implementation(Libraries.ktxCore)
+        implementation(Libraries.kotlinStdLib)
+        implementation(Libraries.coreKtx)
+
+        // Material and AndroidX
         implementation(Libraries.constraintLayout)
-        implementation(Libraries.materialComponents)
+        implementation(Libraries.appCompat)
+        implementation(Libraries.swiperefreshlayout)
+        implementation(Libraries.material)
 
-        androidTestImplementation(TestLibraries.testRunner)
+        // Debug - for debug builds only
+        implementation(Libraries.timber)
+        debugImplementation(Libraries.leakCanary)
+        debugImplementation(Libraries.stetho)
+
+        // UI Tests
         androidTestImplementation(TestLibraries.espresso)
-        androidTestImplementation(TestLibraries.annotation)
+        androidTestImplementation(TestLibraries.kakao)
 
-        testImplementation(TestLibraries.junit4)
+        // Instrumentation Tests
+        androidTestImplementation(TestLibraries.runner)
+        androidTestImplementation(TestLibraries.rules)
+        androidTestImplementation(TestLibraries.androidXJUnit)
+        androidTestImplementation(TestLibraries.androidXTestCore)
+        androidTestImplementation(TestLibraries.androidMockK)
+
+        // Unit Tests
+        testImplementation(TestLibraries.jUnit)
+        testImplementation(TestLibraries.mockWebServer)
+        testImplementation(TestLibraries.mockK)
+        testImplementation(TestLibraries.roboelectric)
+        testImplementation(TestLibraries.truth)
+        testImplementation(TestLibraries.runner)
+        testImplementation(TestLibraries.androidXJUnit)
+        testImplementation(TestLibraries.archComponentTest)
+        testImplementation(TestLibraries.liveDataTesting)
     }
 }

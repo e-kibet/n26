@@ -6,9 +6,9 @@ plugins {
     id(BuildPlugins.androidLibrary) apply false
     id(BuildPlugins.androidApplication) apply false
     id(BuildPlugins.kotlinAndroid) apply false
-    id(BuildPlugins.kotlinAndroidExtensions) apply false
     id(BuildPlugins.dokkaPlugin) version Versions.dokka
     id(BuildPlugins.gradleVersionsPlugin) version Versions.gradleVersionsPlugin
+    id(BuildPlugins.slackKeeper) version Versions.slackKeeper
 }
 
 allprojects {
@@ -22,6 +22,8 @@ allprojects {
 
     apply(plugin = BuildPlugins.dokkaPlugin)
 
+    apply(plugin = BuildPlugins.spotlessPlugin)
+
     apply(plugin = BuildPlugins.ktlintPlugin)
     ktlint {
         android.set(true)
@@ -33,11 +35,13 @@ allprojects {
 }
 
 buildscript {
-    val kotlinVersion by extra("1.4.10")
+    val kotlinVersion by extra("1.4.21")
+    val navVersion by extra("2.3.1")
     val jacocoVersion by extra("0.2")
 
     dependencies {
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinVersion")
+        classpath("androidx.navigation:navigation-safe-args-gradle-plugin:$navVersion")
         classpath("com.hiya:jacoco-android:$jacocoVersion")
     }
 }
