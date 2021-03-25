@@ -17,7 +17,6 @@ package com.n26
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import com.n26.appslab.gradleplugins.R
 
 /**
  *  Main Activity which is the Launcher Activity
