@@ -1,0 +1,20 @@
+configurations:
+  - name: debug
+    task_build: ktlintFormat ktlintCheck detekt spotlessApply assembleDebug
+    task_unittest: assembleDebugUnitTest
+
+  - name: staging
+    version_name: 0.0.1
+    version_code: 1
+    app_identifier: com.n26
+    app_name: N26
+    task_build: ktlintFormat ktlintCheck detekt spotlessApply assembleDebug
+    task_unittest: assembleDebugUnitTest
+
+  - name: release
+    version_name: 0.0.1
+    version_code: 1
+    app_identifier: com.n26
+    app_name: N26
+    task_build: ktlintFormat ktlintCheck detekt spotlessApply assembleDebug
+    task_unittest: assembleDebugUnitTest
