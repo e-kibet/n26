@@ -18,6 +18,12 @@ To check for dependency updates, run the following command:
 
 Refer to this [issue](https://github.com/gradle/gradle/issues/10248), if you get any issues running the lint commands on the terminal :rocket:
 
+## UI Inspiration
+
+<p align="center">
+  <img src="https://github.com/jumaallan/n26/blob/master/Screenshot%202021-03-25%20at%2018.13.42.png" width="500" alt="App UI">
+</p>
+
 ## Must-haves:
 
 * Use of Kotlin.
