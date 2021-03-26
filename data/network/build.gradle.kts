@@ -58,19 +58,11 @@ dependencies {
     implementation(Libraries.loggingInterceptor)
 
     // Coroutines
-    implementation(Libraries.coroutines) // TODO @Harun why do we need this
+    implementation(Libraries.coroutines)
     implementation(Libraries.coroutinesAndroid)
 
     // DI - KOIN
     implementation(Libraries.koin)
-    implementation(Libraries.koinViewModel) // TODO @Harun Why do we have this here
-
-    // Lifecycle
-    // TODO @Harun This look like presentation dependancies
-    implementation(Libraries.viewModel)
-    implementation(Libraries.livedata)
-    implementation(Libraries.lifecycle)
-    implementation(Libraries.viewModelSavedState)
 
     // Debug - for debug builds only
     implementation(Libraries.timber)
