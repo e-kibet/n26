@@ -65,6 +65,9 @@ object Versions {
     //Work Manager
     const val work = "2.5.0"
 
+    // Spark
+    const val spark = "1.2.0"
+
 }
 
 object BuildPlugins {
@@ -135,6 +138,9 @@ object Libraries {
 
     //Work Manager
     const val workManager = "androidx.work:work-runtime-ktx:${Versions.work}"
+
+    //Spark
+    const val spark = "com.robinhood.spark:spark:${Versions.spark}"
 }
 
 object TestLibraries {

@@ -11,7 +11,7 @@
         android:name=".N26"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.n26.MainActivity">
+        <activity android:name=".presentation.ui.views.MainActivity">
 
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

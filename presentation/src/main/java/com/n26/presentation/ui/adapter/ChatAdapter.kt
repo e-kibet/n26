@@ -13,20 +13,17 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.data
+package com.n26.presentation.ui.adapter
 
-import org.junit.Test
+import com.robinhood.spark.SparkAdapter
 
-import org.junit.Assert.*
+class ChatAdapter : SparkAdapter() {
+    private val testData = listOf(
+        1.11f, 2.11f, 0.0001f, 0.2f, 2.1f, 1.11f, 2.11f, 0.0001f, 0.2f, 2.1f
+    )
+    override fun getCount(): Int = testData.size
 
-/**
- * Example local unit test, which will execute on the development machine (host).
- *
- * See [testing documentation](http://d.android.com/tools/testing).
- */
-class ExampleUnitTest {
-    @Test
-    fun addition_isCorrect() {
-        assertEquals(4, 2 + 2)
-    }
+    override fun getItem(index: Int): Float = testData[index]
+
+    override fun getY(index: Int): Float = testData[index]
 }

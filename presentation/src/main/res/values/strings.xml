@@ -1,0 +1,15 @@
+<resources>
+    <string name="title_activity_main">MainActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="text_hash_rate">1.8432</string>
+    <string name="text_btc_mined">205000000000</string>
+    <string name="text_blocks_mined">164</string>
+    <string name="text_btc_price">$ 13.867</string>
+</resources>

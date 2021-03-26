@@ -57,6 +57,7 @@ android {
         implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
         implementation(Libraries.kotlinStdLib)
         implementation(Libraries.coreKtx)
+        implementation(project(BuildModules.presentationModule))
 
         // Material and AndroidX
         implementation(Libraries.constraintLayout)

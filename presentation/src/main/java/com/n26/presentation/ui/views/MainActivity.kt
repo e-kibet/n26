@@ -1,5 +1,5 @@
 /*
- * Copyright 2020 N26
+ * Copyright 2021 N26
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -13,19 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26
+package com.n26.presentation.ui.views
 
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
+import com.n26.presentation.R
+import com.n26.presentation.databinding.ActivityMainBinding
+import com.n26.presentation.ui.adapter.ChatAdapter
+import com.n26.presentation.ui.base.BindingActivity
 
-/**
- *  Main Activity which is the Launcher Activity
- */
-
-class MainActivity : AppCompatActivity() {
+class MainActivity : BindingActivity<ActivityMainBinding>() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+
+        setupChat()
     }
+
+    private fun setupChat() {
+        binding?.sparkview?.adapter = ChatAdapter()
+    }
+
+    override val layoutResId: Int
+        get() = R.layout.activity_main
 }
