@@ -13,16 +13,16 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.domain.usecases
+package com.n26.database.daos
 
-import com.n26.domain.model.StatsDomainModel
-import com.n26.domain.netrepository.BlockChainStatsRepository
+import androidx.room.Dao
+import androidx.room.Query
+import com.n26.database.entities.StatsEntity
+import kotlinx.coroutines.flow.Flow
 
-typealias StatsBaseUseCase = BaseUseCase<StatsDomainModel, Unit>
+@Dao
+internal interface StatsDao : BaseDao<StatsEntity> {
 
-class StatsUseCase(private val statsRepository: BlockChainStatsRepository) :
-    StatsBaseUseCase {
-    override suspend fun invoke(params: StatsDomainModel) {
-        statsRepository.fetchStats()
-    }
+    @Query("select * from stats order by timestamp desc")
+    fun getStatistics(): Flow<List<StatsEntity>>
 }

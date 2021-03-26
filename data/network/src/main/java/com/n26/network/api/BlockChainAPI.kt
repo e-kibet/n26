@@ -13,16 +13,14 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.domain.usecases
+package com.n26.network.api
 
-import com.n26.domain.model.StatsDomainModel
-import com.n26.domain.netrepository.BlockChainStatsRepository
+import com.n26.network.models.StatsResponse
+import retrofit2.Response
+import retrofit2.http.GET
 
-typealias StatsBaseUseCase = BaseUseCase<StatsDomainModel, Unit>
+interface BlockChainAPI {
 
-class StatsUseCase(private val statsRepository: BlockChainStatsRepository) :
-    StatsBaseUseCase {
-    override suspend fun invoke(params: StatsDomainModel) {
-        statsRepository.fetchStats()
-    }
+    @GET("stats")
+    suspend fun fetchStats(): Response<StatsResponse>
 }

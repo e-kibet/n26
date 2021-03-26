@@ -13,16 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.domain.usecases
+package com.n26.database.mappers
 
+import com.n26.database.entities.StatsEntity
 import com.n26.domain.model.StatsDomainModel
-import com.n26.domain.netrepository.BlockChainStatsRepository
 
-typealias StatsBaseUseCase = BaseUseCase<StatsDomainModel, Unit>
-
-class StatsUseCase(private val statsRepository: BlockChainStatsRepository) :
-    StatsBaseUseCase {
-    override suspend fun invoke(params: StatsDomainModel) {
-        statsRepository.fetchStats()
-    }
-}
+internal fun StatsEntity.toDomain() = StatsDomainModel(
+    marketPrice = marketPriceUsd
+)

@@ -13,16 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.domain.usecases
+package com.n26.domain.dbrepository
 
 import com.n26.domain.model.StatsDomainModel
-import com.n26.domain.netrepository.BlockChainStatsRepository
+import kotlinx.coroutines.flow.Flow
 
-typealias StatsBaseUseCase = BaseUseCase<StatsDomainModel, Unit>
+interface StatsRepository {
 
-class StatsUseCase(private val statsRepository: BlockChainStatsRepository) :
-    StatsBaseUseCase {
-    override suspend fun invoke(params: StatsDomainModel) {
-        statsRepository.fetchStats()
-    }
+    // TODO Maybe return a page. I dont know just a thought
+    fun getStats(): Flow<List<StatsDomainModel>>
 }

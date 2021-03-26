@@ -1,5 +1,5 @@
 include(":domain")
-include(":data")
+include(":data:network")
 include(":shared")
 pluginManagement {
     repositories {
@@ -29,3 +29,4 @@ pluginManagement {
 
 include("app")
 rootProject.name = "N26"
+include(":data:database")
