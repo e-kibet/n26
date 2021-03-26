@@ -59,6 +59,12 @@ object Versions {
     const val okhttp = "4.8.1"
     const val loggingInterceptor = "4.8.1"
 
+    //Room
+    const val room = "2.3.0-beta02"
+
+    //Work Manager
+    const val work = "2.5.0"
+
 }
 
 object BuildPlugins {
@@ -121,6 +127,14 @@ object Libraries {
     const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
     const val viewModelSavedState =
         "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Versions.lifecycle}"
+
+    //Room
+    const val roomRuntime = "androidx.room:room-runtime:${Versions.room}"
+    const val roomCompiler = "androidx.room:room-compiler:${Versions.room}"
+    const val roomKtx = "androidx.room:room-ktx:${Versions.room}"
+
+    //Work Manager
+    const val workManager = "androidx.work:work-runtime-ktx:${Versions.work}"
 }
 
 object TestLibraries {
