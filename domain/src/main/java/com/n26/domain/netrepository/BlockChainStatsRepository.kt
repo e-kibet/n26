@@ -15,8 +15,8 @@
  */
 package com.n26.domain.netrepository
 
-import com.example.shared.network.NetworkResult
 import com.n26.domain.model.StatsDomainModel
+import com.n26.shared.network.NetworkResult
 
 interface BlockChainStatsRepository {
     suspend fun fetchStats(): NetworkResult<StatsDomainModel>

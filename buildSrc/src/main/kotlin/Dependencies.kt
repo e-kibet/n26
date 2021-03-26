@@ -17,7 +17,7 @@ object Versions {
     const val chucker = "3.4.0"
 
     //DI - KOIN
-    const val koin = "2.1.5"
+    const val koin = "2.2.2"
 
     // Coroutines
     const val coroutines = "1.3.9"
@@ -168,6 +168,7 @@ object TestLibraries {
     const val mockK = "io.mockk:mockk:${Versions.mockK}"
     const val androidMockK = "io.mockk:mockk-android:${Versions.mockK}"
     const val liveDataTesting = "com.jraska.livedata:testing-ktx:${Versions.liveDataTesting}"
+    const val koinTest = "org.koin:koin-test:${Versions.koin}"
 }
 
 object BuildModules {
