@@ -7,11 +7,40 @@ object Versions {
     const val navigation = "2.3.1"
     const val swiperefreshlayout = "1.2.0-alpha01"
 
+    // Firebase
+    const val firebase = "26.0.0"
+
     // Logging - debug builds
     const val timber = "4.7.1"
     const val leakCanary = "2.4"
     const val stetho = "1.5.1"
     const val chucker = "3.4.0"
+
+    //DI - KOIN
+    const val koin = "2.1.5"
+
+    // Coroutines
+    const val coroutines = "1.3.9"
+
+    // Gson
+    const val gson = "2.9.0"
+
+    // Lifecycle
+    const val lifecycle = "2.3.0-alpha07"
+
+    //Networking
+    const val retrofit = "2.9.0"
+    const val okhttp = "4.8.1"
+    const val loggingInterceptor = "4.8.1"
+
+    //Room
+    const val room = "2.3.0-beta02"
+
+    //Work Manager
+    const val work = "2.5.0"
+
+    // Spark
+    const val spark = "1.2.0"
 
     // Kotlin
     const val kotlinVersion = "1.4.21"
@@ -42,32 +71,6 @@ object Versions {
     const val mockK = "1.10.0"
     const val liveDataTesting = "1.1.2"
 
-    //DI - KOIN
-    const val koin = "2.1.5"
-
-    // Coroutines
-    const val coroutines = "1.3.9"
-
-    // Gson
-    const val gson = "2.9.0"
-
-    // Lifecycle
-    const val lifecycle = "2.3.0-alpha07"
-
-    //Networking
-    const val retrofit = "2.9.0"
-    const val okhttp = "4.8.1"
-    const val loggingInterceptor = "4.8.1"
-
-    //Room
-    const val room = "2.3.0-beta02"
-
-    //Work Manager
-    const val work = "2.5.0"
-
-    // Spark
-    const val spark = "1.2.0"
-
 }
 
 object BuildPlugins {
@@ -97,12 +100,10 @@ object Libraries {
     const val constraintLayout =
         "androidx.constraintlayout:constraintlayout:${Versions.constraintLayout}"
 
-    // Logging - debug builds
-    const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
-    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
-    const val stetho = "com.facebook.stetho:stetho:${Versions.stetho}"
-    const val chunkerDebug = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
-    const val chunkerRelease = "com.github.chuckerteam.chucker:library-no-op:${Versions.chucker}"
+    // Firebase
+    const val bom = "com.google.firebase:firebase-bom:${Versions.firebase}"
+    const val messaging = "com.google.firebase:firebase-messaging-ktx"
+    const val crashlytics = "com.google.firebase:firebase-crashlytics"
 
     // Kotlin
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
@@ -141,6 +142,13 @@ object Libraries {
 
     //Spark
     const val spark = "com.robinhood.spark:spark:${Versions.spark}"
+
+    // Logging - debug builds
+    const val timber = "com.jakewharton.timber:timber:${Versions.timber}"
+    const val leakCanary = "com.squareup.leakcanary:leakcanary-android:${Versions.leakCanary}"
+    const val stetho = "com.facebook.stetho:stetho:${Versions.stetho}"
+    const val chunkerDebug = "com.github.chuckerteam.chucker:library:${Versions.chucker}"
+    const val chunkerRelease = "com.github.chuckerteam.chucker:library-no-op:${Versions.chucker}"
 }
 
 object TestLibraries {
@@ -164,7 +172,8 @@ object TestLibraries {
 
 object BuildModules {
     const val sharedModule = ":shared"
-    const val dataModule = ":data"
+    const val dataModule = ":data:database"
+    const val networkModule = ":data:network"
     const val domainModule = ":domain"
     const val presentationModule = ":presentation"
 }
