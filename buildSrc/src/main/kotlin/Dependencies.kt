@@ -41,6 +41,24 @@ object Versions {
     const val kakao = "2.3.4"
     const val mockK = "1.10.0"
     const val liveDataTesting = "1.1.2"
+
+    //DI - KOIN
+    const val koin = "2.1.5"
+
+    // Coroutines
+    const val coroutines = "1.3.9"
+
+    // Gson
+    const val gson = "2.9.0"
+
+    // Lifecycle
+    const val lifecycle = "2.3.0-alpha07"
+
+    //Networking
+    const val retrofit = "2.9.0"
+    const val okhttp = "4.8.1"
+    const val loggingInterceptor = "4.8.1"
+
 }
 
 object BuildPlugins {
@@ -80,6 +98,29 @@ object Libraries {
     // Kotlin
     const val kotlinStdLib = "org.jetbrains.kotlin:kotlin-stdlib:${Versions.kotlinVersion}"
     const val coreKtx = "androidx.core:core-ktx:${Versions.coreKtx}"
+
+    // DI - KOIN
+    const val koin = "org.koin:koin-android:${Versions.koin}"
+    const val koinViewModel = "org.koin:koin-androidx-viewmodel:${Versions.koin}"
+
+    // Coroutines
+    const val coroutines = "org.jetbrains.kotlinx:kotlinx-coroutines-core:${Versions.coroutines}"
+    const val coroutinesAndroid =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-android:${Versions.coroutines}"
+
+    // Networking - Retrofit, OKHTTP and loggingInterceptor
+    const val retrofit = "com.squareup.retrofit2:retrofit:${Versions.retrofit}"
+    const val gson = "com.squareup.retrofit2:converter-gson:${Versions.retrofit}"
+    const val ohttp = "com.squareup.okhttp3:okhttp:${Versions.okhttp}"
+    const val loggingInterceptor =
+        "com.squareup.okhttp3:logging-interceptor:${Versions.loggingInterceptor}"
+
+    // Lifecycle
+    const val viewModel = "androidx.lifecycle:lifecycle-viewmodel-ktx:${Versions.lifecycle}"
+    const val livedata = "androidx.lifecycle:lifecycle-livedata-ktx:${Versions.lifecycle}"
+    const val lifecycle = "androidx.lifecycle:lifecycle-runtime-ktx:${Versions.lifecycle}"
+    const val viewModelSavedState =
+        "androidx.lifecycle:lifecycle-viewmodel-savedstate:${Versions.lifecycle}"
 }
 
 object TestLibraries {
@@ -99,6 +140,13 @@ object TestLibraries {
     const val mockK = "io.mockk:mockk:${Versions.mockK}"
     const val androidMockK = "io.mockk:mockk-android:${Versions.mockK}"
     const val liveDataTesting = "com.jraska.livedata:testing-ktx:${Versions.liveDataTesting}"
+}
+
+object BuildModules {
+    const val sharedModule = ":shared"
+    const val dataModule = ":data"
+    const val domainModule = ":domain"
+    const val presentationModule = ":presentation"
 }
 
 object AndroidSdk {
