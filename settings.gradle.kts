@@ -1,7 +1,3 @@
-include(":presentation")
-include(":domain")
-include(":data:network")
-include(":shared")
 pluginManagement {
     repositories {
         jcenter()
@@ -30,4 +26,9 @@ pluginManagement {
 
 include("app")
 rootProject.name = "N26"
+
+include(":presentation")
+include(":domain")
 include(":data:database")
+include(":data:network")
+include(":shared")

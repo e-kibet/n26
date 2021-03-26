@@ -58,7 +58,6 @@ android {
 }
 
 dependencies {
-
     implementation(project(BuildModules.domainModule))
 
     implementation(Libraries.kotlinStdLib)

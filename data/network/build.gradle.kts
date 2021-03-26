@@ -56,6 +56,8 @@ dependencies {
     implementation(Libraries.gson)
     implementation(Libraries.ohttp)
     implementation(Libraries.loggingInterceptor)
+    implementation(Libraries.chunkerDebug)
+    releaseImplementation(Libraries.chunkerRelease)
 
     // Coroutines
     implementation(Libraries.coroutines)

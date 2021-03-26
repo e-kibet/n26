@@ -43,11 +43,16 @@ android {
 
 dependencies {
     implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+
     implementation(Libraries.kotlinStdLib)
     implementation(Libraries.coreKtx)
 
     // Gson
     implementation(Libraries.gson)
+
+    // Firebase
+    implementation(platform(Libraries.bom))
+    implementation(Libraries.crashlytics)
 
     // Debug - for debug builds only
     implementation(Libraries.timber)

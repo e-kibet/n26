@@ -49,21 +49,37 @@ android {
     buildTypes {
         getByName("release") {
             isMinifyEnabled = false
-            proguardFiles(getDefaultProguardFile("proguard-android-optimize.txt"), "proguard-rules.pro")
+            proguardFiles(
+                getDefaultProguardFile("proguard-android-optimize.txt"),
+                "proguard-rules.pro"
+            )
         }
     }
 
     dependencies {
         implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
+        implementation(project(BuildModules.presentationModule))
+        implementation(project(BuildModules.domainModule))
+        implementation(project(BuildModules.dataModule))
+        implementation(project(BuildModules.networkModule))
+        implementation(project(BuildModules.sharedModule))
+
         implementation(Libraries.kotlinStdLib)
         implementation(Libraries.coreKtx)
-        implementation(project(BuildModules.presentationModule))
 
         // Material and AndroidX
         implementation(Libraries.constraintLayout)
         implementation(Libraries.appCompat)
         implementation(Libraries.swiperefreshlayout)
         implementation(Libraries.material)
+
+        // Firebase
+        implementation(platform(Libraries.bom))
+        implementation(Libraries.crashlytics)
+
+        // DI - KOIN
+        implementation(Libraries.koin)
+        implementation(Libraries.koinViewModel)
 
         // Debug - for debug builds only
         implementation(Libraries.timber)
