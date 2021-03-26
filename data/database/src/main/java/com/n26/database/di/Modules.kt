@@ -13,16 +13,15 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.domain.usecases
+package com.n26.database.di
 
-import com.n26.domain.model.StatsDomainModel
-import com.n26.domain.netrepository.BlockChainStatsRepository
+import com.n26.database.BlockChainDatabase
+import org.koin.core.module.Module
+import org.koin.dsl.module
 
-typealias StatsBaseUseCase = BaseUseCase<StatsDomainModel, Unit>
+val databaseModule: Module = module(override = true) {
 
-class StatsUseCase(private val statsRepository: BlockChainStatsRepository) :
-    StatsBaseUseCase {
-    override suspend fun invoke(params: StatsDomainModel) {
-        statsRepository.fetchStats()
+    single {
+        BlockChainDatabase.getInstance(get())
     }
 }

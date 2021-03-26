@@ -13,16 +13,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.domain.usecases
+package com.n26.domain.netrepository
 
 import com.n26.domain.model.StatsDomainModel
-import com.n26.domain.netrepository.BlockChainStatsRepository
+import com.example.shared.network.NetworkResult
 
-typealias StatsBaseUseCase = BaseUseCase<StatsDomainModel, Unit>
-
-class StatsUseCase(private val statsRepository: BlockChainStatsRepository) :
-    StatsBaseUseCase {
-    override suspend fun invoke(params: StatsDomainModel) {
-        statsRepository.fetchStats()
-    }
+interface BlockChainStatsRepository {
+    suspend fun fetchStats(): NetworkResult<StatsDomainModel>
 }
