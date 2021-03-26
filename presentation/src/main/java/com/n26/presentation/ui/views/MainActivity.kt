@@ -1,16 +1,27 @@
+/*
+ * Copyright 2021 N26
+ *
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *      http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
 package com.n26.presentation.ui.views
 
 import android.os.Bundle
-import com.google.android.material.floatingactionbutton.FloatingActionButton
-import com.google.android.material.snackbar.Snackbar
-import androidx.appcompat.app.AppCompatActivity
 import com.n26.presentation.R
 import com.n26.presentation.databinding.ActivityMainBinding
 import com.n26.presentation.ui.adapter.ChatAdapter
 import com.n26.presentation.ui.base.BindingActivity
 
 class MainActivity : BindingActivity<ActivityMainBinding>() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,7 +31,6 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
 
     private fun setupChat() {
         binding?.sparkview?.adapter = ChatAdapter()
-
     }
 
     override val layoutResId: Int
