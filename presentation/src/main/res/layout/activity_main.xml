@@ -1,148 +1,154 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+<layout>
+    <androidx.constraintlayout.widget.ConstraintLayout android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgCoin"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:src="@drawable/ic_baseline_monetization_on_24"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgCoin"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:src="@drawable/ic_baseline_monetization_on_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
-        android:id="@+id/tvBitcoinPrice"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="$ 13.867"
-        android:text="@string/text_btc_price"
-        android:textSize="@dimen/text_size_large"
-        android:textStyle="bold"
-        android:layout_marginTop="@dimen/fab_margin"
-        app:layout_constraintTop_toBottomOf="@id/imgCoin"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+        <TextView
+            android:id="@+id/tvBitcoinPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="$ 13.867"
+            android:text="@string/text_btc_price"
+            android:textSize="@dimen/text_size_large"
+            android:textStyle="bold"
+            android:layout_marginTop="@dimen/fab_margin"
+            app:layout_constraintTop_toBottomOf="@id/imgCoin"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    <androidx.appcompat.widget.AppCompatImageView
-        android:id="@+id/imgDrop"
-        android:layout_width="30dp"
-        android:layout_height="30dp"
-        android:layout_marginTop="@dimen/fab_margin"
-        android:src="@drawable/ic_baseline_arrow_drop_down_circle_24"
-        app:layout_constraintTop_toBottomOf="@id/tvBitcoinPrice"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
+       <!-- <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgDrop"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="@dimen/fab_margin"
+            android:src="@drawable/ic_baseline_arrow_drop_down_circle_24"
+            app:layout_constraintTop_toBottomOf="@id/tvBitcoinPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"/>
 
-    <TextView
-        android:id="@+id/tvFluctuation"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:text="$ 13.867"
-        android:text="@string/text_btc_price"
-        android:textStyle="bold"
-        android:layout_marginStart="@dimen/fab_margin"
-        app:layout_constraintStart_toEndOf="@id/imgDrop"
-        app:layout_constraintTop_toTopOf="@id/imgDrop"
-        app:layout_constraintBottom_toBottomOf="@id/imgDrop"/>
 
-    <com.google.android.material.card.MaterialCardView
-        android:id="@+id/cardChat"
-        android:layout_width="match_parent"
-        android:layout_height="300dp"
-        android:layout_margin="@dimen/fab_margin"
-        app:cardCornerRadius="@dimen/cardRadius"
-        app:cardElevation="@dimen/cardElevation"
-        app:layout_constraintTop_toBottomOf="@id/imgDrop"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+        <TextView
+            android:id="@+id/tvFluctuation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            tools:text="$ 13.867"
+            android:text="@string/text_btc_price"
+            android:textStyle="bold"
+            android:layout_marginStart="@dimen/fab_margin"
+            app:layout_constraintStart_toEndOf="@id/imgDrop"
+            app:layout_constraintTop_toTopOf="@id/imgDrop"
+            app:layout_constraintBottom_toBottomOf="@id/imgDrop"/>
+              -->
 
-        <com.robinhood.spark.SparkView
-            android:id="@+id/sparkview"
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardChat"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
-    </com.google.android.material.card.MaterialCardView>
+            android:layout_height="200dp"
+            android:layout_margin="@dimen/fab_margin"
+            app:cardCornerRadius="@dimen/cardRadius"
+            app:cardElevation="@dimen/cardElevation"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/tvBitcoinPrice"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-    <com.google.android.material.card.MaterialCardView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="@dimen/fab_margin"
-        app:cardCornerRadius="@dimen/cardRadius"
-        app:cardElevation="@dimen/cardElevation"
-        app:cardUseCompatPadding="true"
-        app:layout_constraintTop_toBottomOf="@id/cardChat"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent">
+            <com.robinhood.spark.SparkView
+                android:id="@+id/sparkview"
+                android:layout_margin="@dimen/fab_margin"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </com.google.android.material.card.MaterialCardView>
 
-        <androidx.constraintlayout.widget.ConstraintLayout
+        <com.google.android.material.card.MaterialCardView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="@dimen/fab_margin">
+            android:layout_margin="@dimen/fab_margin"
+            app:cardCornerRadius="@dimen/cardRadius"
+            app:cardElevation="@dimen/cardElevation"
+            app:cardUseCompatPadding="true"
+            app:layout_constraintTop_toBottomOf="@id/cardChat"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent">
 
-            <TextView
-                android:id="@+id/tvHashRate"
-                android:layout_width="wrap_content"
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                tools:text="Hash Rate"
-                android:textStyle="bold"
-                android:textSize="@dimen/text_size_normal"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                android:layout_margin="@dimen/fab_margin">
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="BTC Mined"
-                android:textSize="@dimen/text_size_normal"
-                android:textStyle="bold"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:id="@+id/tvHashRate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Hash Rate"
+                    android:textStyle="bold"
+                    android:textSize="@dimen/text_size_normal"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="Blocks Mined"
-                android:textSize="@dimen/text_size_normal"
-                android:textStyle="bold"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toTopOf="parent"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="BTC Mined"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="1.8432"
-                android:text="@string/text_hash_rate"
-                android:layout_marginTop="@dimen/fab_margin"
-                app:layout_constraintStart_toStartOf="parent"
-               app:layout_constraintTop_toBottomOf="@id/tvHashRate"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Mined"
+                    android:textSize="@dimen/text_size_normal"
+                    android:textStyle="bold"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="205000000000"
-                android:text="@string/text_btc_mined"
-                android:layout_marginTop="@dimen/fab_margin"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvHashRate"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="1.8432"
+                    android:text="@string/text_hash_rate"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHashRate"/>
 
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                tools:text="164"
-                android:text="@string/text_blocks_mined"
-                android:layout_marginTop="@dimen/fab_margin"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvHashRate"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="205000000000"
+                    android:text="@string/text_btc_mined"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHashRate"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    tools:text="164"
+                    android:text="@string/text_blocks_mined"
+                    android:layout_marginTop="@dimen/fab_margin"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/tvHashRate"/>
 
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
-    </com.google.android.material.card.MaterialCardView>
+        </com.google.android.material.card.MaterialCardView>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

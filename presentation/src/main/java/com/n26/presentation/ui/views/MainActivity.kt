@@ -7,15 +7,13 @@ import androidx.appcompat.app.AppCompatActivity
 import com.n26.presentation.R
 import com.n26.presentation.databinding.ActivityMainBinding
 import com.n26.presentation.ui.adapter.ChatAdapter
+import com.n26.presentation.ui.base.BindingActivity
 
-class MainActivity : AppCompatActivity() {
-    private var binding: ActivityMainBinding? = null
+class MainActivity : BindingActivity<ActivityMainBinding>() {
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        binding = ActivityMainBinding.inflate(layoutInflater)
-        setContentView(binding!!.root)
-        setSupportActionBar(findViewById(R.id.toolbar))
 
         setupChat()
     }
@@ -24,4 +22,7 @@ class MainActivity : AppCompatActivity() {
         binding?.sparkview?.adapter = ChatAdapter()
 
     }
+
+    override val layoutResId: Int
+        get() = R.layout.activity_main
 }
