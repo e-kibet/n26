@@ -15,12 +15,15 @@
  */
 package com.n26.network.di
 
+import com.chuckerteam.chucker.api.ChuckerCollector
+import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.data.BuildConfig
-import com.n26.network.api.BlockChainAPI
 import com.example.shared.utils.Constants
 import com.google.gson.GsonBuilder
+import com.n26.network.api.BlockChainAPI
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.Module
 import org.koin.dsl.module
 import retrofit2.Retrofit
@@ -37,8 +40,16 @@ val networkingModule: Module = module(override = true) {
             else -> HttpLoggingInterceptor.Level.BODY
         }
 
+        val chuckerInterceptor = ChuckerInterceptor.Builder(androidContext())
+            .collector(ChuckerCollector(androidContext()))
+            .maxContentLength(250000L)
+            .redactHeaders(emptySet())
+            .alwaysReadResponseBody(true)
+            .build()
+
         OkHttpClient.Builder()
             .addInterceptor(interceptor)
+            .addInterceptor(chuckerInterceptor)
             .connectTimeout(15, TimeUnit.SECONDS)
             .readTimeout(15, TimeUnit.SECONDS)
             .build()
@@ -61,3 +72,8 @@ val networkingModule: Module = module(override = true) {
 val apiModule: Module = module {
     single<BlockChainAPI> { get<Retrofit>().create() }
 }
+
+val networkModule: List<Module> = listOf(
+    networkingModule,
+    apiModule
+)

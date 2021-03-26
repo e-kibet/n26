@@ -25,3 +25,7 @@ val databaseModule: Module = module(override = true) {
         BlockChainDatabase.getInstance(get())
     }
 }
+
+val dataModule: List<Module> = listOf(
+    databaseModule
+)
