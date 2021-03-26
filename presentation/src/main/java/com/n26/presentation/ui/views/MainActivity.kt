@@ -30,7 +30,7 @@ class MainActivity : BindingActivity<ActivityMainBinding>() {
     }
 
     private fun setupChat() {
-        binding?.sparkview?.adapter = ChatAdapter()
+        binding.sparkview.adapter = ChatAdapter()
     }
 
     override val layoutResId: Int
