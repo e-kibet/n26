@@ -23,7 +23,7 @@ import com.n26.shared.network.NetworkResult
 import timber.log.Timber
 import java.io.IOException
 
-class BlockChainStatsRepositoryImpl(private val blockChainAPI: BlockChainAPI) :
+internal class BlockChainStatsRepositoryImpl(private val blockChainAPI: BlockChainAPI) :
     BlockChainStatsRepository {
     override suspend fun fetchStats(): NetworkResult<StatsDomainModel> =
         try {

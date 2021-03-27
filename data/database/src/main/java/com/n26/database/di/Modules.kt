@@ -16,6 +16,8 @@
 package com.n26.database.di
 
 import com.n26.database.BlockChainDatabase
+import com.n26.database.repositories.StatsRepositoryImpl
+import com.n26.domain.dbrepository.StatsRepository
 import org.koin.core.module.Module
 import org.koin.dsl.module
 
@@ -26,6 +28,10 @@ val databaseModule: Module = module(override = true) {
     }
 }
 
+val repositoryModule: Module = module(override = true) {
+    single<StatsRepository> { StatsRepositoryImpl(get()) }
+}
+
 val dataModule: List<Module> = listOf(
-    databaseModule
+    databaseModule, repositoryModule
 )

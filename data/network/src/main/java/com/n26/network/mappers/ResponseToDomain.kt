@@ -18,6 +18,25 @@ package com.n26.network.mappers
 import com.n26.network.models.StatsResponse
 import com.n26.domain.model.StatsDomainModel
 
-fun StatsResponse.toDomain() = StatsDomainModel(
-    marketPrice = marketPriceUsd
+internal fun StatsResponse.toDomain() = StatsDomainModel(
+    timestamp = timestamp,
+    blocksSize = blocksSize,
+    difficulty = difficulty,
+    estimatedBtcSent = estimatedBtcSent,
+    estimatedTransactionVolumeUsd = estimatedTransactionVolumeUsd,
+    hashRate = hashRate,
+    marketPrice = marketPriceUsd,
+    minersRevenueBtc = minersRevenueBtc,
+    minersRevenueUsd = minersRevenueUsd,
+    minutesBetweenBlocks = minutesBetweenBlocks,
+    nBlocksMined = nBlocksMined,
+    nBlocksTotal = nBlocksTotal,
+    nBtcMined = nBtcMined,
+    nTx = nTx,
+    nextretarget = nextretarget,
+    totalBtcSent = totalBtcSent,
+    totalFeesBtc = totalFeesBtc,
+    totalbc = totalbc,
+    tradeVolumeBtc = tradeVolumeBtc,
+    tradeVolumeUsd = tradeVolumeUsd
 )

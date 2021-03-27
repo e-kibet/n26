@@ -56,6 +56,7 @@ android {
         }
     }
 
+    // TODO before submission we need to clean this list of dependencies
     dependencies {
         implementation(fileTree(mapOf("dir" to "libs", "include" to listOf("*.jar"))))
         implementation(project(BuildModules.presentationModule))
@@ -107,5 +108,7 @@ android {
         testImplementation(TestLibraries.androidXJUnit)
         testImplementation(TestLibraries.archComponentTest)
         testImplementation(TestLibraries.liveDataTesting)
+
+        implementation(Libraries.workManager)
     }
 }

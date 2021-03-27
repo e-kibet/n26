@@ -17,6 +17,7 @@ package com.n26.database.repositories
 
 import com.n26.database.BlockChainDatabase
 import com.n26.database.mappers.toDomain
+import com.n26.database.mappers.toEntityStats
 import com.n26.domain.dbrepository.StatsRepository
 import com.n26.domain.model.StatsDomainModel
 import kotlinx.coroutines.flow.Flow
@@ -30,5 +31,9 @@ internal class StatsRepositoryImpl(private val database: BlockChainDatabase) : S
                 statsEntity.toDomain()
             }
         }
+    }
+
+    override suspend fun saveStats(data: StatsDomainModel) {
+        database.statisticsDao().save(data.toEntityStats())
     }
 }

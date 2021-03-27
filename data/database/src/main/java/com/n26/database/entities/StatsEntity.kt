@@ -42,7 +42,7 @@ internal data class StatsEntity(
     val hashRate: Double,
 
     @ColumnInfo(name = "market_price_usd")
-    val marketPriceUsd: Double,
+    val marketPrice: Double,
 
     @ColumnInfo(name = "miners_revenue_btc")
     val minersRevenueBtc: Int,

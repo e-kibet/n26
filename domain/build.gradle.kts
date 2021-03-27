@@ -50,7 +50,6 @@ dependencies {
 
     // DI - KOIN
     implementation(Libraries.koin)
-    implementation(Libraries.koinViewModel)
 
     // Unit Tests
     testImplementation(TestLibraries.jUnit)

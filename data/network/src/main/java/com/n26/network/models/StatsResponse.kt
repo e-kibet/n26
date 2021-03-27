@@ -17,7 +17,7 @@ package com.n26.network.models
 
 import com.google.gson.annotations.SerializedName
 
-data class StatsResponse(
+internal data class StatsResponse(
     @SerializedName("blocks_size")
     val blocksSize: Int,
     @SerializedName("difficulty")
@@ -47,7 +47,7 @@ data class StatsResponse(
     @SerializedName("nextretarget")
     val nextretarget: Int,
     @SerializedName("timestamp")
-    val timestamp: Double,
+    val timestamp: Long,
     @SerializedName("total_btc_sent")
     val totalBtcSent: Long,
     @SerializedName("total_fees_btc")
