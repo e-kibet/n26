@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
+import com.n26.database.daos.StatsDao
 import com.n26.database.repositories.StatsRepositoryImpl
 import kotlinx.coroutines.flow.first
 import kotlinx.coroutines.runBlocking
@@ -19,7 +20,8 @@ internal class StatsRepositoryTest {
 
     // region Members
 
-    private lateinit var db: BlockChainDatabase
+    private lateinit var db: Database
+    private lateinit var statsDao: StatsDao
 
     // endregion
 
@@ -29,8 +31,9 @@ internal class StatsRepositoryTest {
     fun setup() {
         val context = ApplicationProvider.getApplicationContext<Context>()
         db = Room.inMemoryDatabaseBuilder(
-            context, BlockChainDatabase::class.java
+            context, Database::class.java
         ).build()
+        statsDao = db.statsDao()
     }
 
 
@@ -48,7 +51,7 @@ internal class StatsRepositoryTest {
     @Test
     fun whenWeSaveStats_ThenTheDatabaseIsUpdatedWithCorrectInfo() = runBlocking {
         // given a stats repository
-        val statsRepository = createStatsRepository(database = db)
+        val statsRepository = createStatsRepository(statsDao = statsDao)
 
         // and a stats domain model
         val statsDomainModel = StatsDomainModelFaker.create()
@@ -65,7 +68,7 @@ internal class StatsRepositoryTest {
     @Test
     fun whenWeFetchStats_ThenWeGetTheExpectedResults() = runBlocking {
         // given a stats repository
-        val statsRepository = createStatsRepository(database = db)
+        val statsRepository = createStatsRepository(statsDao = statsDao)
 
         // and the expected stats
         val statOne = StatsDomainModelFaker.create(tradeVolumeBtc = 12.34)
@@ -86,8 +89,8 @@ internal class StatsRepositoryTest {
 
     // region Helper Methods
 
-    private fun createStatsRepository(database: BlockChainDatabase) = StatsRepositoryImpl(
-        database = database
+    private fun createStatsRepository(statsDao: StatsDao) = StatsRepositoryImpl(
+        statsDao = statsDao
     )
 
     // endregion
