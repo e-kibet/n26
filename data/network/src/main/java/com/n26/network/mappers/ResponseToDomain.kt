@@ -15,8 +15,8 @@
  */
 package com.n26.network.mappers
 
-import com.n26.network.models.StatsResponse
 import com.n26.domain.model.StatsDomainModel
+import com.n26.network.models.StatsResponse
 
 internal fun StatsResponse.toDomain() = StatsDomainModel(
     timestamp = timestamp,

@@ -15,21 +15,25 @@
  */
 package com.n26.network.repository
 
-import com.n26.network.api.BlockChainAPI
-import com.n26.network.mappers.toDomain
 import com.n26.domain.model.StatsDomainModel
 import com.n26.domain.netrepository.BlockChainStatsRepository
+import com.n26.network.api.BlockChainAPI
+import com.n26.network.mappers.toDomain
 import com.n26.shared.network.NetworkResult
 import timber.log.Timber
 import java.io.IOException
 
-internal class BlockChainStatsRepositoryImpl(private val blockChainAPI: BlockChainAPI) :
-    BlockChainStatsRepository {
+internal class BlockChainStatsRepositoryImpl(
+    private val blockChainAPI: BlockChainAPI
+) : BlockChainStatsRepository {
+
     override suspend fun fetchStats(): NetworkResult<StatsDomainModel> =
         try {
             val blockChainStats = blockChainAPI.fetchStats()
             when {
-                blockChainStats.isSuccessful -> NetworkResult.Success(blockChainStats.body()!!.toDomain())
+                blockChainStats.isSuccessful -> NetworkResult.Success(
+                    blockChainStats.body()!!.toDomain()
+                )
                 else -> NetworkResult.APIError
             }
         } catch (e: IOException) {
