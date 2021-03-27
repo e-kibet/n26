@@ -24,5 +24,5 @@ import kotlinx.coroutines.flow.Flow
 interface StatsDao : BaseDao<StatsEntity> {
 
     @Query("SELECT * FROM stats ORDER BY timestamp DESC")
-    suspend fun getStatistics(): Flow<List<StatsEntity>>
+    fun getStatistics(): Flow<List<StatsEntity>>
 }
