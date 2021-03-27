@@ -26,6 +26,7 @@ import org.koin.android.BuildConfig
 @Database(entities = [StatsEntity::class], version = 1)
 internal abstract class BlockChainDatabase : RoomDatabase() {
     companion object {
+
         private var INSTANCE: BlockChainDatabase? = null
 
         fun getInstance(context: Context): BlockChainDatabase {

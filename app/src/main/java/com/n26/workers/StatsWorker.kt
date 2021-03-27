@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.network.workers
+package com.n26.workers
 
 import android.content.Context
 import androidx.work.CoroutineWorker
@@ -23,10 +23,17 @@ import com.n26.domain.netrepository.BlockChainStatsRepository
 import com.n26.shared.network.NetworkResult
 import org.koin.java.KoinJavaComponent.inject
 
-class StatsWorker(context: Context, params: WorkerParameters) : CoroutineWorker(context, params) {
+class StatsWorker(
+    context: Context,
+    params: WorkerParameters
+) : CoroutineWorker(context, params) {
 
     private val statsRepository: StatsRepository by inject(StatsRepository::class.java)
-    private val blockChainStatsRepository: BlockChainStatsRepository by inject(BlockChainStatsRepository::class.java)
+
+    private val blockChainStatsRepository: BlockChainStatsRepository by inject(
+        BlockChainStatsRepository::class.java
+    )
+
     override suspend fun doWork(): Result {
         return when (val fetchStats = blockChainStatsRepository.fetchStats()) {
             is NetworkResult.Success -> {
