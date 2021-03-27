@@ -28,7 +28,7 @@ class StatsRepositoryImpl(
 ) : StatsRepository {
 
     // TODO maybe use some generic result type like in network to have states such as loading etc
-    override fun getStats(): Flow<List<StatsDomainModel>> {
+    override suspend fun getStats(): Flow<List<StatsDomainModel>> {
         return statsDao.getStatistics().map {
             it.map { statsEntity ->
                 statsEntity.toDomain()
@@ -37,6 +37,6 @@ class StatsRepositoryImpl(
     }
 
     override suspend fun saveStats(data: StatsDomainModel) {
-        statsDao.save(data.toEntityStats())
+        statsDao.insert(data.toEntityStats())
     }
 }
