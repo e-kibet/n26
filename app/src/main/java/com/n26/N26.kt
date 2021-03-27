@@ -23,7 +23,7 @@ import androidx.work.WorkManager
 import com.n26.database.di.dataModule
 import com.n26.domain.di.domainModules
 import com.n26.network.di.networkModule
-import com.n26.network.workers.StatsWorker
+import com.n26.workers.StatsWorker
 import com.n26.shared.utils.CrashlyticsTree
 import org.jetbrains.annotations.NotNull
 import org.koin.android.ext.koin.androidContext
