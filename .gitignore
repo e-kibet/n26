@@ -16,6 +16,12 @@
 buildSrc/build/*
 buildSrc/.gradle/*
 
+data/build
+data/database/build
+data/network/build
+presentation/build
+domain/build
+
 # fastlane
 fastlane/report.xml
 fastlane/Preview.html
