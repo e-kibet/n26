@@ -69,7 +69,8 @@ dependencies {
 
     implementation(Libraries.koin)
 
-    androidTestImplementation(TestLibraries.jUnit)
-    androidTestImplementation(TestLibraries.androidXJUnit)
-    androidTestImplementation(TestLibraries.runner)
+    testImplementation(TestLibraries.jUnit)
+    testImplementation(TestLibraries.androidXJUnit)
+    testImplementation(TestLibraries.runner)
+    testImplementation(TestLibraries.roboelectric)
 }

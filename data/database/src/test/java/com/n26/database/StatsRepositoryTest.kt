@@ -45,7 +45,6 @@ internal class StatsRepositoryTest {
     // region Tests
 
     //TODO Check on runBlockingTest
-    // TODO Move test to unit test
     @Test
     fun whenWeSaveStats_ThenTheDatabaseIsUpdatedWithCorrectInfo() = runBlocking {
         // given a stats repository
@@ -70,12 +69,11 @@ internal class StatsRepositoryTest {
 
         // and the expected stats
         val statOne = StatsDomainModelFaker.create(tradeVolumeBtc = 12.34)
-        val statTwo = StatsDomainModelFaker.create(tradeVolumeBtc = 18.34)
-        val expectedStats = listOf(statOne, statTwo)
+
+        val expectedStats = listOf(statOne)
 
         // are added to the database
         statsRepository.saveStats(statOne)
-        statsRepository.saveStats(statTwo)
 
         // when we fetch stats
         val actualStats = statsRepository.getStats().first()
