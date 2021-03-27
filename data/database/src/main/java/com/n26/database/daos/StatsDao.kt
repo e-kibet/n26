@@ -21,8 +21,8 @@ import com.n26.database.entities.StatsEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-internal interface StatsDao : BaseDao<StatsEntity> {
+interface StatsDao : BaseDao<StatsEntity> {
 
-    @Query("select * from stats order by timestamp desc")
+    @Query("SELECT * FROM stats ORDER BY timestamp DESC")
     fun getStatistics(): Flow<List<StatsEntity>>
 }

@@ -13,27 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.database.daos
+package com.n26.database
 
-import androidx.room.*
+import androidx.room.RoomDatabase
+import com.n26.database.daos.StatsDao
+import com.n26.database.entities.StatsEntity
 
-interface BaseDao<T> {
+@androidx.room.Database(
+    entities = [
+        StatsEntity::class
+    ],
+    version = 1,
+    exportSchema = false
+)
+abstract class Database : RoomDatabase() {
 
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(item: T)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(vararg items: T)
-
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insert(items: List<T>)
-
-    @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun update(item: T): Int
-
-    @Update(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun update(items: List<T>): Int
-
-    @Delete
-    suspend fun delete(item: T)
+    abstract fun statsDao(): StatsDao
 }
