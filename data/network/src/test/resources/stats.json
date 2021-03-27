@@ -1,0 +1,22 @@
+{
+  "blocks_size": 1,
+  "difficulty": 1,
+  "estimated_btc_sent": 1,
+  "estimated_transaction_volume_usd": 1,
+  "hash_rate": 1,
+  "market_price_usd": 1,
+  "miners_revenue_btc": 1,
+  "miners_revenue_usd": 1,
+  "minutes_between_blocks": 1,
+  "n_blocks_mined": 1,
+  "n_blocks_total": 1,
+  "n_btc_mined": 1,
+  "n_tx": 1,
+  "nextretarget": 1,
+  "timestamp": 1,
+  "total_fees_btc": 1,
+  "total_btc_sent": 1,
+  "totalbc": 1,
+  "trade_volume_btc": 1,
+  "trade_volume_usd": 1
+}

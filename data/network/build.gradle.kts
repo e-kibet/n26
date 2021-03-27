@@ -68,4 +68,13 @@ dependencies {
 
     // Debug - for debug builds only
     implementation(Libraries.timber)
+
+    implementation(Libraries.workManager)
+
+    testImplementation(TestLibraries.jUnit)
+    testImplementation(TestLibraries.androidXJUnit)
+    testImplementation(TestLibraries.runner)
+    testImplementation(TestLibraries.roboelectric)
+    testImplementation(TestLibraries.mockWebServer)
+    testImplementation(TestLibraries.koinTest)
 }

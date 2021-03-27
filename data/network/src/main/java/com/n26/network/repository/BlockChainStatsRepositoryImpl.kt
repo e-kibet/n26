@@ -17,9 +17,9 @@ package com.n26.network.repository
 
 import com.n26.network.api.BlockChainAPI
 import com.n26.network.mappers.toDomain
-import com.example.shared.network.NetworkResult
 import com.n26.domain.model.StatsDomainModel
 import com.n26.domain.netrepository.BlockChainStatsRepository
+import com.n26.shared.network.NetworkResult
 import timber.log.Timber
 import java.io.IOException
 

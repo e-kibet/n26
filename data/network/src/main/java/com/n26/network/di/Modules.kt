@@ -18,10 +18,10 @@ package com.n26.network.di
 import com.chuckerteam.chucker.api.ChuckerCollector
 import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.data.BuildConfig
-import com.example.shared.utils.Constants
 import com.google.gson.GsonBuilder
 import com.n26.domain.netrepository.BlockChainStatsRepository
 import com.n26.network.api.BlockChainAPI
+import com.n26.shared.utils.Constants
 import com.n26.network.repository.BlockChainStatsRepositoryImpl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
