@@ -13,15 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.example.shared.network
+package com.n26.shared.utils
 
-import com.google.gson.annotations.SerializedName
-
-data class ErrorResponse(
-    @SerializedName("errors")
-    val errors: List<Any>?,
-    @SerializedName("message")
-    val message: String?,
-    @SerializedName("status")
-    val status: String?
-)
+object Constants {
+    const val BASE_URL = "https://api.blockchain.info/"
+}
