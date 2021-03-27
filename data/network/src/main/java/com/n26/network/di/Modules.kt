@@ -20,7 +20,9 @@ import com.chuckerteam.chucker.api.ChuckerInterceptor
 import com.example.data.BuildConfig
 import com.example.shared.utils.Constants
 import com.google.gson.GsonBuilder
+import com.n26.domain.netrepository.BlockChainStatsRepository
 import com.n26.network.api.BlockChainAPI
+import com.n26.network.repository.BlockChainStatsRepositoryImpl
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import org.koin.android.ext.koin.androidContext
@@ -69,11 +71,16 @@ val networkingModule: Module = module(override = true) {
     }
 }
 
+val repositoryModule: Module = module {
+    single<BlockChainStatsRepository> { BlockChainStatsRepositoryImpl(get()) }
+}
+
 val apiModule: Module = module {
     single<BlockChainAPI> { get<Retrofit>().create() }
 }
 
 val networkModule: List<Module> = listOf(
     networkingModule,
-    apiModule
+    apiModule,
+    repositoryModule
 )

@@ -22,4 +22,6 @@ interface StatsRepository {
 
     // TODO Maybe return a page. I dont know just a thought
     fun getStats(): Flow<List<StatsDomainModel>>
+
+    suspend fun saveStats(data: StatsDomainModel)
 }

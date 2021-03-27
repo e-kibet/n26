@@ -16,5 +16,43 @@
 package com.n26.domain.model
 
 data class StatsDomainModel(
-    val marketPrice: Double
+    val timestamp: Long,
+
+    val blocksSize: Int,
+
+    val difficulty: Long,
+
+    val estimatedBtcSent: Long,
+
+    val estimatedTransactionVolumeUsd: Double,
+
+    val hashRate: Double,
+
+    val marketPrice: Double,
+
+    val minersRevenueBtc: Int,
+
+    val minersRevenueUsd: Double,
+
+    val minutesBetweenBlocks: Double,
+
+    val nBlocksMined: Int,
+
+    val nBlocksTotal: Int,
+
+    val nBtcMined: Long,
+
+    val nTx: Int,
+
+    val nextretarget: Int,
+
+    val totalBtcSent: Long,
+
+    val totalFeesBtc: Long,
+
+    val totalbc: Long,
+
+    val tradeVolumeBtc: Double,
+
+    val tradeVolumeUsd: Double
 )

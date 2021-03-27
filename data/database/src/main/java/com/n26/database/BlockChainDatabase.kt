@@ -23,7 +23,7 @@ import com.n26.database.daos.StatsDao
 import com.n26.database.entities.StatsEntity
 import org.koin.android.BuildConfig
 
-@Database(entities = [StatsEntity::class], version = 0)
+@Database(entities = [StatsEntity::class], version = 1)
 internal abstract class BlockChainDatabase : RoomDatabase() {
     companion object {
         private var INSTANCE: BlockChainDatabase? = null

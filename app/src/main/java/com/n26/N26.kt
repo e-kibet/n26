@@ -17,10 +17,14 @@ package com.n26
 
 import android.app.Application
 import androidx.annotation.Nullable
+import androidx.work.ExistingPeriodicWorkPolicy
+import androidx.work.PeriodicWorkRequestBuilder
+import androidx.work.WorkManager
 import com.example.shared.utils.CrashlyticsTree
 import com.n26.database.di.dataModule
 import com.n26.domain.di.domainModules
 import com.n26.network.di.networkModule
+import com.n26.network.workers.StatsWorker
 import org.jetbrains.annotations.NotNull
 import org.koin.android.ext.koin.androidContext
 import org.koin.android.ext.koin.androidLogger
@@ -29,6 +33,7 @@ import org.koin.core.error.KoinAppAlreadyStartedException
 import org.koin.core.logger.Level
 import org.koin.core.module.Module
 import timber.log.Timber
+import java.util.concurrent.TimeUnit
 
 class N26 : Application() {
 
@@ -37,6 +42,19 @@ class N26 : Application() {
 
         initKoin()
         initTimber()
+
+        scheduleStatsWorker()
+    }
+
+    private fun scheduleStatsWorker() {
+        val work = PeriodicWorkRequestBuilder<StatsWorker>(15, TimeUnit.MINUTES)
+            .build()
+        val workManager = WorkManager.getInstance(this)
+        workManager.enqueueUniquePeriodicWork(
+            STATS_WORKER,
+            ExistingPeriodicWorkPolicy.REPLACE, // We wont api will give an updated value so discard
+            work
+        )
     }
 
     private fun initKoin() {
@@ -66,5 +84,9 @@ class N26 : Application() {
             })
         }
         else -> Timber.plant(CrashlyticsTree())
+    }
+
+    companion object {
+        const val STATS_WORKER = "STATS_WORKER"
     }
 }

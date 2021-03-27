@@ -68,6 +68,4 @@ dependencies {
 
     // Debug - for debug builds only
     implementation(Libraries.timber)
-
-    implementation(Libraries.workManager)
 }
