@@ -15,26 +15,24 @@
  */
 package com.n26.database.daos
 
-import androidx.room.Delete
-import androidx.room.Insert
-import androidx.room.OnConflictStrategy
-import androidx.room.Transaction
-import androidx.room.Update
+import androidx.room.*
 
-interface BaseDao <T> {
+interface BaseDao<T> {
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun save(item: T): Long
-
-    @Transaction
-    @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun save(items: List<T>)
+    suspend fun insert(item: T)
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun save(vararg item: T)
+    suspend fun insert(vararg items: T)
 
-    @Update
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insert(items: List<T>)
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
     suspend fun update(item: T): Int
+
+    @Update(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun update(items: List<T>): Int
 
     @Delete
     suspend fun delete(item: T)
