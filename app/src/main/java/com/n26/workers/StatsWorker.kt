@@ -18,15 +18,15 @@ package com.n26.network.workers
 import android.content.Context
 import androidx.work.CoroutineWorker
 import androidx.work.WorkerParameters
-import com.example.shared.network.NetworkResult
 import com.n26.domain.dbrepository.StatsRepository
 import com.n26.domain.netrepository.BlockChainStatsRepository
+import com.n26.shared.network.NetworkResult
 import org.koin.java.KoinJavaComponent.inject
 
 class StatsWorker(context: Context, params: WorkerParameters) : CoroutineWorker(context, params) {
 
-    val statsRepository: StatsRepository by inject(StatsRepository::class.java)
-    val blockChainStatsRepository: BlockChainStatsRepository by inject(BlockChainStatsRepository::class.java)
+    private val statsRepository: StatsRepository by inject(StatsRepository::class.java)
+    private val blockChainStatsRepository: BlockChainStatsRepository by inject(BlockChainStatsRepository::class.java)
     override suspend fun doWork(): Result {
         return when (val fetchStats = blockChainStatsRepository.fetchStats()) {
             is NetworkResult.Success -> {
