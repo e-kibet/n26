@@ -38,7 +38,6 @@ private val daoModule: Module = module {
     single { get<Database>().statsDao() }
 }
 
-
 val repositoryModule: Module = module(override = true) {
     single<StatsRepository> { StatsRepositoryImpl(get()) }
 }
