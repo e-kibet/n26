@@ -18,11 +18,12 @@ package com.n26.domain.usecases
 import com.n26.domain.model.StatsDomainModel
 import com.n26.domain.netrepository.BlockChainStatsRepository
 
-typealias StatsBaseUseCase = BaseUseCase<StatsDomainModel, Unit>
+class StatsUseCase(
+    private val statsRepository: BlockChainStatsRepository
+) : BaseUseCase<StatsDomainModel, Unit> {
 
-class StatsUseCase(private val statsRepository: BlockChainStatsRepository) :
-    StatsBaseUseCase {
     override suspend fun invoke(params: StatsDomainModel) {
         statsRepository.fetchStats()
     }
+
 }

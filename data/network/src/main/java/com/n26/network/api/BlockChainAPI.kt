@@ -19,7 +19,7 @@ import com.n26.network.models.StatsResponse
 import retrofit2.Response
 import retrofit2.http.GET
 
-internal interface BlockChainAPI {
+interface BlockChainAPI {
 
     @GET("stats")
     suspend fun fetchStats(): Response<StatsResponse>

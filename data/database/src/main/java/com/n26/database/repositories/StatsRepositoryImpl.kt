@@ -36,7 +36,7 @@ class StatsRepositoryImpl(
         }
     }
 
-    override suspend fun saveStats(data: StatsDomainModel) {
+    override suspend fun saveStats(data: StatsDomainModel) =
         statsDao.insert(data.toEntityStats())
-    }
+
 }

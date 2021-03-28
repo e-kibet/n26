@@ -71,12 +71,12 @@ val networkingModule: Module = module(override = true) {
     }
 }
 
-val repositoryModule: Module = module {
-    single<BlockChainStatsRepository> { BlockChainStatsRepositoryImpl(get()) }
-}
-
 val apiModule: Module = module {
     single<BlockChainAPI> { get<Retrofit>().create() }
+}
+
+val repositoryModule: Module = module {
+    single<BlockChainStatsRepository> { BlockChainStatsRepositoryImpl(get()) }
 }
 
 val networkModule: List<Module> = listOf(

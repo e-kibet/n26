@@ -17,7 +17,7 @@ package com.n26.network.models
 
 import com.google.gson.annotations.SerializedName
 
-internal data class StatsResponse(
+data class StatsResponse(
     @SerializedName("blocks_size")
     val blocksSize: Int,
     @SerializedName("difficulty")

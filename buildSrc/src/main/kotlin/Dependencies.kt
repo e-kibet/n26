@@ -34,7 +34,7 @@ object Versions {
     const val loggingInterceptor = "4.8.1"
 
     //Room
-    const val room = "2.3.0-beta02"
+    const val room = "2.3.0-alpha02"
 
     //Work Manager
     const val work = "2.5.0"
