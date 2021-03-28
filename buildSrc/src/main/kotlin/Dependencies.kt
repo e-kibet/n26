@@ -164,6 +164,8 @@ object TestLibraries {
     const val rules = "androidx.test:rules:${Versions.rules}"
     const val archComponentTest =
         "androidx.arch.core:core-testing:${Versions.archComponentTest}"
+    const val coroutinesTest =
+        "org.jetbrains.kotlinx:kotlinx-coroutines-test:${Versions.coroutines}"
     const val kakao = "com.agoda.kakao:kakao:${Versions.kakao}"
     const val mockK = "io.mockk:mockk:${Versions.mockK}"
     const val androidMockK = "io.mockk:mockk-android:${Versions.mockK}"

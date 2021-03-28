@@ -77,4 +77,8 @@ dependencies {
     testImplementation(TestLibraries.roboelectric)
     testImplementation(TestLibraries.mockWebServer)
     testImplementation(TestLibraries.koinTest)
+    testImplementation(TestLibraries.truth)
+    testImplementation(TestLibraries.coroutinesTest)
+    testImplementation(TestLibraries.archComponentTest)
+    testImplementation(TestLibraries.liveDataTesting)
 }
