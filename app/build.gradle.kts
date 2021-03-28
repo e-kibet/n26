@@ -26,7 +26,7 @@ android {
         targetSdkVersion(AndroidSdk.targetSdkVersion)
         versionCode = AndroidSdk.versionCode
         versionName = AndroidSdk.versionName
-        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        testInstrumentationRunner = "com.n26.runner.MockTestRunner"
     }
 
     testOptions {
@@ -94,6 +94,7 @@ android {
         // Instrumentation Tests
         androidTestImplementation(TestLibraries.runner)
         androidTestImplementation(TestLibraries.rules)
+        androidTestImplementation(TestLibraries.koinTest)
         androidTestImplementation(TestLibraries.androidXJUnit)
         androidTestImplementation(TestLibraries.androidXTestCore)
         androidTestImplementation(TestLibraries.androidMockK)
