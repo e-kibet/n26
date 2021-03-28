@@ -25,5 +25,4 @@ class StatsUseCase(
     override suspend fun invoke(params: StatsDomainModel) {
         statsRepository.fetchStats()
     }
-
 }
