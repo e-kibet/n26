@@ -49,7 +49,7 @@ internal class StatsRepositoryTest {
 
     //TODO Check on runBlockingTest
     @Test
-    fun whenWeSaveStats_ThenTheDatabaseIsUpdatedWithCorrectInfo() = runBlocking {
+    fun `when we save stats, then the database is updated with correct info`() = runBlocking {
         // given a stats repository
         val statsRepository = createStatsRepository(statsDao = statsDao)
 
@@ -66,7 +66,7 @@ internal class StatsRepositoryTest {
     }
 
     @Test
-    fun whenWeFetchStats_ThenWeGetTheExpectedResults() = runBlocking {
+    fun `when we fetch stats, then we get the expected results`() = runBlocking {
         // given a stats repository
         val statsRepository = createStatsRepository(statsDao = statsDao)
 
