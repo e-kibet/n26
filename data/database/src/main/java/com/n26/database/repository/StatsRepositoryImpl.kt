@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.database.repositories
+package com.n26.database.repository
 
 import com.n26.database.daos.StatsDao
 import com.n26.database.mappers.toDomain
@@ -36,7 +36,6 @@ class StatsRepositoryImpl(
         }
     }
 
-    override suspend fun saveStats(data: StatsDomainModel) {
+    override suspend fun saveStats(data: StatsDomainModel) =
         statsDao.insert(data.toEntityStats())
-    }
 }

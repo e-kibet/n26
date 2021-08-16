@@ -13,22 +13,26 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.network
+package com.n26.network.util
 
 import com.n26.network.di.networkModule
-import org.junit.Test
-import org.junit.runner.RunWith
-import org.koin.test.KoinTest
-import org.koin.test.check.checkModules
-import org.robolectric.RobolectricTestRunner
-import org.robolectric.annotation.Config
+import org.junit.rules.TestRule
+import org.junit.runner.Description
+import org.junit.runners.model.Statement
+import org.koin.core.context.startKoin
+import org.koin.core.context.stopKoin
 
-@RunWith(RobolectricTestRunner::class)
-@Config(sdk = [28])
-class CheckModulesTest : KoinTest {
+class KoinTestRule : TestRule {
 
-    @Test
-    fun checkAllModules() = checkModules {
-        modules(networkModule + fakeContext)
+    override fun apply(base: Statement, description: Description): Statement {
+        return object : Statement() {
+
+            override fun evaluate() {
+                stopKoin()
+                startKoin { modules(networkModule) }
+                base.evaluate()
+                stopKoin()
+            }
+        }
     }
 }

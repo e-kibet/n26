@@ -13,14 +13,4 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.network.api
-
-import com.n26.network.models.StatsResponse
-import retrofit2.Response
-import retrofit2.http.GET
-
-interface BlockChainAPI {
-
-    @GET("stats")
-    suspend fun fetchStats(): Response<StatsResponse>
-}
+package com.n26.fake

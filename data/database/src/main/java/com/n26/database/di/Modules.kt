@@ -17,8 +17,6 @@ package com.n26.database.di
 
 import androidx.room.Room
 import com.n26.database.Database
-import com.n26.database.repositories.StatsRepositoryImpl
-import com.n26.domain.dbrepository.StatsRepository
 import org.koin.android.ext.koin.androidContext
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -39,7 +37,7 @@ private val daoModule: Module = module {
 }
 
 val repositoryModule: Module = module(override = true) {
-    single<StatsRepository> { StatsRepositoryImpl(get()) }
+    single<com.n26.domain.dbrepository.StatsRepository> { com.n26.database.repository.StatsRepositoryImpl(get()) }
 }
 
 val dataModule: List<Module> = listOf(

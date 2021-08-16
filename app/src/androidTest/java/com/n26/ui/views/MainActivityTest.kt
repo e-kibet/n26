@@ -13,14 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package com.n26.network.api
+package com.n26.ui.views
 
-import com.n26.network.models.StatsResponse
-import retrofit2.Response
-import retrofit2.http.GET
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.filters.LargeTest
+import org.junit.runner.RunWith
+import org.koin.test.KoinTest
 
-interface BlockChainAPI {
-
-    @GET("stats")
-    suspend fun fetchStats(): Response<StatsResponse>
-}
+@LargeTest
+@RunWith(AndroidJUnit4::class)
+class MainActivityTest : KoinTest

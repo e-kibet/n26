@@ -10,11 +10,25 @@ Before every commit, make sure you run the following commands:
 ./codeAnalysis
 ```
 
+To test code coverage, run the following bash script:
+
+```shell script
+./coverage
+```
+
+If you have Fastlane installed, you can run the develop lane:
+
+```shell script
+fastlane branch conf:debug
+```
+
 To check for dependency updates, run the following command:
 
 ```shell script
 ./gradlew dependencyUpdate
 ```
+
+To inspect the app database, use Android Studio database inspector by running the app on a Device >=26 API Level
 
 Refer to this [issue](https://github.com/gradle/gradle/issues/10248), if you get any issues running the lint commands on the terminal :rocket:
 
@@ -63,7 +77,6 @@ Refer to this [issue](https://github.com/gradle/gradle/issues/10248), if you get
     * [Leak Canary](https://github.com/square/leakcanary) - a memory leak detection library for Android.
 
 * Architecture
-    * Clean Architecture
     * MVVM - Model View View Model
 * Tests
     * [Unit Tests](https://en.wikipedia.org/wiki/Unit_testing) ([JUnit](https://junit.org/junit4/)) - a simple framework to write repeatable tests.

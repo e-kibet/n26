@@ -23,7 +23,7 @@ import com.n26.shared.network.NetworkResult
 import timber.log.Timber
 import java.io.IOException
 
-internal class BlockChainStatsRepositoryImpl(
+class BlockChainStatsRepositoryImpl(
     private val blockChainAPI: BlockChainAPI
 ) : BlockChainStatsRepository {
 
